@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="jp" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>アカウント作成</title>
+<link href="css/account_edit.css" rel="stylesheet"></link>
+</head>
+<body>
+ 	
+ 	<table class="parent-table">
+ 		<tr>
+ 			<td>
+ 				<div th:text="#{account_create}" class="title"></div>
+ 			</td>
+ 		</tr>
+ 		<tr>
+ 			<td class="center">
+ 				<span id ="message" class="message"></span>
+ 			</td>
+ 		</tr>
+ 		<tr>
+ 			<td>
+				<form method="post" action="@{/account_create}" th:object="${accountForm}">
+					<table class="center">
+						<tr>
+							<td th:text="アカウントID" class="right"></td>
+							<td>
+								<input type="text" id="newAccountId" th:field="*{accountId}" placeholder="アカウントID" class="edit-text" />
+							</td>
+						</tr>
+						<tr>
+							<td th:text="パスワード" class="right"></td>
+							<td>
+								<input type="password" id="newPassword" th:field="*{password}" class="edit-text" />
+							</td>
+						</tr>
+						<tr>
+							<td th:text="苗字" class="right"></td>
+							<td>
+								<input type="text" id="newLastName" th:field="*{lastName}" placeholder="苗字" class="edit-text" />
+							</td>
+						</tr>
+						<tr>
+							<td th:text="名前" class="right"></td>
+							<td>
+								<span id="firstNameErrorMessage" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color: red"></span>
+								<input type="text" id="newFirstName" th:field="*{firstName}" placeholder="名前" class="edit-text" />
+							</td>
+						</tr>
+						<tr>
+							<td th:text="年齢" class="right"></td>
+							<td>
+								<input type="text" id="newAge" th:field="*{age}" pattern="^[0-9]+$" maxlength="3" placeholder="年齢" class="edit-text" />
+							</td>
+						</tr>
+						<tr>
+							<td th:text="ポジション" class="right"></td>
+							<td>
+								<select id="newPosition" name="newPosition" class="positionList">
+									<option value="" selected>選択してください</option>
+									<option 
+									th:each="newPosition: ${positionMstList}"
+									th:value="${newPosition.code}"
+									th:text="${newPosition.name}">
+									</option>
+								</select>
+								<input type="hidden" id="newPositionCode" th:field="*{positionCode}" />
+							</td>
+						</tr>
+						<tr>
+							<td th:text="住所" class="right"></td>
+							<td>
+								<input type="text" id="newAddress" th:field="*{address}" placeholder="住所" class="edit-text" />
+							</td>
+						</tr>
+						<tr>
+							<td th:text="コメント" class="right"></td>
+							<td>
+								<textarea id="newComment" th:field="*{comment}" rows="5" cols="30" class="comment-textarea"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>
+								<input id="createBtn" type="button" value="作成" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</td>
+		</tr>
+	</table>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+</body>
+</html>

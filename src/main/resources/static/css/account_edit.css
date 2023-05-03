@@ -1,0 +1,75 @@
+.parent-table {
+	width: 90%;
+	border-collapse: collapse;
+	font-size: 12px;
+}
+
+.parent-table th, .parent-table td {
+	width: 200px;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+.child-table {
+	width: 90%;
+	border-collapse: collapse;
+	font-size: 12px;
+}
+
+.child-table th {
+	border: 1px solid #ddd;
+	padding: 6px;
+	background-color: #f5f5f5;
+}
+
+.child-table td {
+	border: 1px solid #ddd;
+	padding: 6px;
+}
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.right {
+	text-align: right;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.alert-message {
+	color: #ff0000;
+	font-weight: bold;
+	border: none;
+}
+
+.text-condition {
+	width: 200px;
+}
+
+.positionList{
+	margin-left: 2em;
+	height: 22px;
+	width: 240px;
+}
+
+.edit-text {
+	margin-left: 2em;
+	height: 18px;
+	width: 230px;
+}
+
+.comment-textarea {
+	margin-left: 2em;
+}
+
+.message {
+	color: #ff0000;
+	font-weight: bold;
+	border: none;
+}

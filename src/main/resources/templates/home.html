@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="jp" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Hello</title>
+</head>
+<body>
+
+	<div>
+		<h4>メッセージの表示</h4>
+		<span th:text="${message}"></span>
+	</div>
+	
+	
+	<div th:if="${name} != null">
+		<h4>nameの判定式</h4>
+		<span th:text="'こんにちは' + ${name} + 'さん'"></span>
+	</div>
+ 
+	<input class="footer__button" type="button" value="送信" onclick="showAlert();">
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	
+</body>
+</html>
